@@ -23,6 +23,7 @@
 
 using namespace std;
 
+//Arithmetic Sum function prototype
 long int sum_formula(long int a1, long int an, long int n);
 
 int main(){
@@ -31,57 +32,36 @@ int main(){
     cin >> t;
     for(long int a0 = 0; a0 < t; a0++){
         long int n;
-		sum = 0;
-        cin >> n;
-		
-		xn = (n-1)/3.0;
-		yn = (n-1)/5.0;
-		zn = (n-1)/15.0;
 
-		cout << "#times " << xn << " " << yn << " " << zn << endl << endl;
+		sum = 0; //Setting sum back to zero
+        cin >> n;
+	
+		//Calculate how many terms (n) of 3, 5, and 15 exist from (0 - (n-1))
+		xn = (n-1)/3; 		                                                                                                                             yn =y (n-1)/5;
+		zn = (n-1)/15;
 		
+		//Calculate nth term for each
 		xnth = 3*xn;
 		ynth = 5*yn;
 		znth = 15*zn;
-
-		cout << "nth number " << xnth << " " << ynth << " " << znth << endl << endl;
-			
+		
+		//Add all mutiples of 3 and 5 while subtracting mutiples of 15
 		sum += sum_formula(3, xnth, xn);
-		cout << "Sum 3: " << sum_formula(3, xnth, xn) << endl;
-	
-
+		sum += sum_formula(5, ynth, yn);
 		sum -= sum_formula(15, znth, zn);
 
-		cout << "Sum 15: " << sum_formula(15, znth, zn) << endl;
-
-		sum += sum_formula(5, ynth, yn);
-		cout << "Sum 5: " << sum_formula(5, ynth, yn) << endl;
-
+		//Print the result
 		cout << sum << endl;
     }
     return 0;
 }
 
+/* Function to calculate the sum of an arithmetic series
+ * 
+ * Parameters: a1 (First term), an (nth term), n (number of terms)
+ * Return Value: Arithmetic Sum
+ */
 long sum_formula(long a1, long an, long n) {
 	long int temp = n*((a1 + an)/2.0);
 	return temp;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
