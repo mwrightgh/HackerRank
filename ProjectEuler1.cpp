@@ -63,6 +63,7 @@ int main(){
  * Return Value: Arithmetic Sum
  */
 long sum_formula(long a1, long an, long n) {
-	long int temp = n*((a1 + an)/2.0);
-	return temp;
+	long double = (a1 + an)/2.0;
+	long int result = (temp*n);
+	return result;
 }
