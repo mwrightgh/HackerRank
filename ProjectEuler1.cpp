@@ -36,8 +36,9 @@ int main(){
 		sum = 0; //Setting sum back to zero
         cin >> n;
 	
-		//Calculate how many terms (n) of 3, 5, and 15 exist from (0 - (n-1))
-		xn = (n-1)/3; 		                                                                                                                             yn =y (n-1)/5;
+		//Calculate how many terms for each
+		xn = (n-1)/3;
+		yn = (n-1)/5;
 		zn = (n-1)/15;
 		
 		//Calculate nth term for each
